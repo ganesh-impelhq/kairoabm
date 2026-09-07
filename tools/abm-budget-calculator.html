@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ABM budget calculator — Kairo</title>
+<meta name="description" content="Work out what it costs to reach a named-account list at a given frequency, accounting for match rate and buying-committee size.">
+<meta property="og:title" content="ABM budget calculator — Kairo">
+<meta property="og:description" content="Work out what it costs to reach a named-account list at a given frequency, accounting for match rate and buying-committee size.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kairo">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="masthead">
+  <div class="masthead__in">
+    <a class="brand" href="../index.html" aria-label="Kairo home">
+      <svg class="mark" width="27" height="27" viewBox="0 0 48 48" aria-hidden="true">
+<g fill="none" stroke="#2B4BF2" stroke-width="4.4" stroke-linecap="round">
+<path d="M10 19 A9 9 0 0 1 19 10" opacity=".3"/>
+<path d="M10 28 A18 18 0 0 1 28 10" opacity=".6"/>
+<path d="M10 37 A27 27 0 0 1 37 10"/></g>
+<circle cx="37" cy="37" r="5.5" fill="#FF6B4A"/></svg><span class="brand__word">Kairo</span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="../product/index.html">Product</a>
+      <a href="../product/kai.html">Kai</a>
+      <a href="../pricing.html">Pricing</a>
+      <a href="../customers/index.html">Customers</a>
+      <a href="../compare.html">Compare</a>
+      <a href="../blog/index.html">Blog</a>
+      <span class="nav__sep" aria-hidden="true"></span>
+      <a href="../demo.html">Sign in</a>
+      <a class="btn btn--primary btn--sm" href="../demo.html">Start free</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+
+<section class="hero hero--ink">
+  <div class="shell">
+    <div class="hero__in stack stack-lg">
+      <span class="eyebrow">Free tool</span>
+      <h1>ABM budget calculator</h1>
+      <p class="lede">Before you commit a quarter to a named-account programme, work out what it costs to reach the list you have chosen at the frequency you actually need. Most programmes are under-funded for their list size, and the maths takes about a minute.</p>
+      <div class="btnrow"><a class="btn btn--primary" href="../demo.html">Start a 30-day trial</a><a class="btn btn--ghost" href="../demo.html">Book a walkthrough</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="band band--tight">
+  <div class="shell">
+    <div class="calc">
+      <form class="calc__panel" id="calcform" onsubmit="return false">
+        <div class="field">
+          <label for="accounts">Target accounts</label>
+          <input id="accounts" type="number" min="1" step="1" value="400">
+          <span class="hint">Companies on the list you intend to reach.</span>
+        </div>
+        <div class="field">
+          <label for="people">Buying-committee members per account</label>
+          <input id="people" type="number" min="1" step="1" value="6">
+          <span class="hint">People you need in the audience at each company. Six to eleven is typical for a considered B2B purchase.</span>
+        </div>
+        <div class="field">
+          <label for="freq">Impressions per person, per month</label>
+          <input id="freq" type="number" min="1" step="1" value="8">
+          <span class="hint">Below about four a month, most programmes fail to build recognition. Above about twelve, you are usually paying for fatigue.</span>
+        </div>
+        <div class="field">
+          <label for="cpm">Expected CPM (your currency)</label>
+          <input id="cpm" type="number" min="1" step="1" value="65">
+          <span class="hint">Tight seniority filters on a small named list run expensive. £45&ndash;£90 is a common range; check your own account.</span>
+        </div>
+        <div class="field">
+          <label for="match">Audience match rate</label>
+          <input id="match" type="number" min="1" max="100" step="1" value="80">
+          <span class="hint">Share of your list the platform can actually match. Rarely 100%. Check your upload report rather than guessing.</span>
+        </div>
+        <div class="field">
+          <label for="months">Programme length (months)</label>
+          <input id="months" type="number" min="1" step="1" value="3">
+        </div>
+      </form>
+
+      <div class="calc__out">
+        <div>
+          <div class="k" style="margin-bottom:6px">Monthly budget required</div>
+          <div class="v v--big" id="out-month">&mdash;</div>
+        </div>
+        <div class="row"><span class="k">Accounts actually reachable</span><span class="v" id="out-reach">&mdash;</span></div>
+        <div class="row"><span class="k">People in the addressable audience</span><span class="v" id="out-people">&mdash;</span></div>
+        <div class="row"><span class="k">Impressions needed per month</span><span class="v" id="out-imps">&mdash;</span></div>
+        <div class="row"><span class="k">Cost per account reached / month</span><span class="v" id="out-cpa">&mdash;</span></div>
+        <div class="row"><span class="k">Total for the programme</span><span class="v" id="out-total">&mdash;</span></div>
+        <p class="calc__note">This sizes <b>reach</b>, not outcomes. It answers &ldquo;can I afford to be seen by this list at this frequency&rdquo;, which is the question most programmes get wrong before creative is ever discussed. It assumes even delivery; in practice the auction concentrates impressions unless you cap frequency and split tiers into separate campaigns.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band band--fog">
+  <div class="shell stack stack-lg">
+    <div class="stack stack-sm"><span class="eyebrow">Reading the result</span><h2>Three ways the number comes back wrong</h2></div>
+    <div class="grid g3">
+      <div class="card card--flat"><h3>The budget is far above what you have</h3><p>The correct response is almost always to cut the list, not the frequency. Reaching 150 accounts properly beats reaching 400 accounts occasionally, and the second option produces a report that looks fine and a pipeline that does not.</p></div>
+      <div class="card card--flat"><h3>The budget looks suspiciously low</h3><p>Check the match rate. A programme sized on a 95% assumed match that runs at 62% will spend its money on a fifth of the list and report an average that hides it.</p></div>
+      <div class="card card--flat"><h3>It looks affordable but nothing moves</h3><p>Reach is necessary and not sufficient. If coverage is good and stage movement is not, the problem is creative or offer &mdash; which is a much better problem to have, because you can now see it.</p></div>
+    </div>
+    <div class="note"><b>A note on the frequency input:</b> the number that matters is impressions per <i>person</i>, not per account. An account with eleven people on the committee needs roughly eleven times the delivery of a one-person account to hit the same individual frequency, which is why enterprise tiers quietly starve when they share a campaign with mid-market.</div>
+  </div>
+</section>
+
+<script>
+(function(){
+  var f = ["accounts","people","freq","cpm","match","months"].map(function(id){return document.getElementById(id);});
+  function fmt(n){ return n.toLocaleString(undefined,{maximumFractionDigits:0}); }
+  function calc(){
+    var accounts = Math.max(1, +f[0].value || 0);
+    var people   = Math.max(1, +f[1].value || 0);
+    var freq     = Math.max(1, +f[2].value || 0);
+    var cpm      = Math.max(0.01, +f[3].value || 0);
+    var match    = Math.min(100, Math.max(1, +f[4].value || 0)) / 100;
+    var months   = Math.max(1, +f[5].value || 0);
+
+    var reachable = accounts * match;
+    var audience  = reachable * people;
+    var imps      = audience * freq;
+    var monthly   = (imps / 1000) * cpm;
+
+    document.getElementById("out-reach").textContent  = fmt(reachable);
+    document.getElementById("out-people").textContent = fmt(audience);
+    document.getElementById("out-imps").textContent   = fmt(imps);
+    document.getElementById("out-month").textContent  = fmt(monthly);
+    document.getElementById("out-cpa").textContent    =
+      (monthly / reachable).toLocaleString(undefined,{minimumFractionDigits:2, maximumFractionDigits:2});
+    document.getElementById("out-total").textContent  = fmt(monthly * months);
+  }
+  f.forEach(function(el){ el.addEventListener("input", calc); });
+  calc();
+})();
+</script>
+<section class="band">
+  <div class="shell">
+    <div class="cta">
+      <div>
+        <h2>Once you know the budget, find out where it actually landed.</h2>
+        <p>Kairo shows delivery by account, so the plan and the reality can be compared.</p>
+      </div>
+      <div class="btnrow">
+        <a class="btn btn--primary" href="../demo.html">Start a 30-day trial</a>
+        <a class="btn btn--ghost" href="../demo.html">Book a walkthrough</a>
+      </div>
+    </div>
+  </div>
+</section></main>
+<footer class="foot">
+  <div class="shell">
+    <div class="foot__grid">
+      <div>
+        <a class="brand" href="../index.html" style="color:#fff" aria-label="Kairo home">
+          <svg class="mark" width="26" height="26" viewBox="0 0 48 48" aria-hidden="true">
+<g fill="none" stroke="#7A92FF" stroke-width="4.4" stroke-linecap="round">
+<path d="M10 19 A9 9 0 0 1 19 10" opacity=".3"/>
+<path d="M10 28 A18 18 0 0 1 28 10" opacity=".6"/>
+<path d="M10 37 A27 27 0 0 1 37 10"/></g>
+<circle cx="37" cy="37" r="5.5" fill="#FF6B4A"/></svg><span class="brand__word">Kairo</span>
+        </a>
+        <p style="margin-top:14px; max-width:30ch; line-height:1.6">LinkedIn-first ABM, measured at the account level. Know which named accounts your ads reached, and which ones are ready for a call.</p>
+      </div>
+      <div>
+      <h4>Product</h4>
+      <ul>
+        <li><a href="../product/index.html">Overview</a></li>
+        <li><a href="../product/kai.html">Kai, the AI analyst</a></li>
+        <li><a href="../product/engagement.html">Company engagement</a></li>
+        <li><a href="../product/scoring.html">Account scoring &amp; intent</a></li>
+        <li><a href="../product/attribution.html">Revenue attribution</a></li>
+        <li><a href="../product/integrations.html">CRM sync, API &amp; MCP</a></li>
+      </ul>
+    </div><div>
+      <h4>Use cases</h4>
+      <ul>
+        <li><a href="../product/attribution.html">ABM campaign reporting</a></li>
+        <li><a href="../product/scoring.html">Prioritising accounts for sales</a></li>
+        <li><a href="../blog/full-funnel-linkedin-abm.html">Full-funnel LinkedIn programmes</a></li>
+        <li><a href="../pricing.html">Agencies &amp; consultancies</a></li>
+        <li><a href="../tools/abm-budget-calculator.html">ABM budget calculator</a></li>
+      </ul>
+    </div><div>
+      <h4>Proof</h4>
+      <ul>
+        <li><a href="../customers/index.html">All case studies</a></li>
+        <li><a href="../customers/northfield-systems.html">Northfield Systems</a></li>
+        <li><a href="../customers/tessellate.html">Tessellate</a></li>
+        <li><a href="../compare.html">How Kairo compares</a></li>
+        <li><a href="../demo.html">Book a walkthrough</a></li>
+      </ul>
+    </div><div>
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="../blog/index.html">Blog</a></li>
+        <li><a href="../blog/measuring-influenced-pipeline.html">LinkedIn ABM measurement</a></li>
+        <li><a href="../blog/account-scoring-sales-trusts.html">Account scoring guide</a></li>
+        <li><a href="../tools/abm-budget-calculator.html">Budget calculator</a></li>
+        <li><a href="../about.html">About Kairo</a></li>
+        <li><a href="../about.html#contact">Contact</a></li>
+      </ul>
+    </div>
+    </div>
+    <div class="foot__base">
+      <span>&copy; 2026 Abron Technologies Private Limited</span>
+      <span><a href="../legal/terms.html">Terms of use</a> &nbsp;·&nbsp; <a href="../legal/privacy.html">Privacy policy</a></span>
+      <span class="sp"><a href="mailto:hello@kairoabm.com">hello@kairoabm.com</a></span>
+    </div>
+    <p class="foot__addr">
+      Kairo is a product of Abron Technologies Private Limited &middot; 2nd Floor, Samson &amp; Sons Building, TKD Road, Muttada, Thiruvananthapuram, Kerala 695025, India
+    </p>
+  </div>
+</footer>
+</body>
+</html>

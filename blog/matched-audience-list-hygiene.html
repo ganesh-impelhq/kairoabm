@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The list hygiene problem nobody talks about — Kairo</title>
+<meta name="description" content="Match rates decay silently. A target list uploaded eight months ago is not the list your ads are running against today, and nothing in the reporting will tell you.">
+<meta property="og:title" content="The list hygiene problem nobody talks about — Kairo">
+<meta property="og:description" content="Match rates decay silently. A target list uploaded eight months ago is not the list your ads are running against today, and nothing in the reporting will tell you.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kairo">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="masthead">
+  <div class="masthead__in">
+    <a class="brand" href="../index.html" aria-label="Kairo home">
+      <svg class="mark" width="27" height="27" viewBox="0 0 48 48" aria-hidden="true">
+<g fill="none" stroke="#2B4BF2" stroke-width="4.4" stroke-linecap="round">
+<path d="M10 19 A9 9 0 0 1 19 10" opacity=".3"/>
+<path d="M10 28 A18 18 0 0 1 28 10" opacity=".6"/>
+<path d="M10 37 A27 27 0 0 1 37 10"/></g>
+<circle cx="37" cy="37" r="5.5" fill="#FF6B4A"/></svg><span class="brand__word">Kairo</span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="../product/index.html">Product</a>
+      <a href="../product/kai.html">Kai</a>
+      <a href="../pricing.html">Pricing</a>
+      <a href="../customers/index.html">Customers</a>
+      <a href="../compare.html">Compare</a>
+      <a href="../blog/index.html" aria-current="page">Blog</a>
+      <span class="nav__sep" aria-hidden="true"></span>
+      <a href="../demo.html">Sign in</a>
+      <a class="btn btn--primary btn--sm" href="../demo.html">Start free</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+
+<section class="band band--tight">
+  <div class="shell-narrow stack stack-md" style="padding-top:38px">
+    <div class="crumbs"><a href="index.html">Blog</a> <span>/</span> <span>Campaign structure</span></div>
+    <h1 style="font-size:clamp(30px,4.4vw,44px)">The list hygiene problem nobody talks about</h1>
+    <p class="lede">Match rates decay silently. A target list uploaded eight months ago is not the list your ads are running against today, and nothing in the reporting will tell you.</p>
+    <div class="byline">
+      <span class="avatar" aria-hidden="true">SO</span>
+      <span><b style="color:var(--ink)">Sam Okonjo</b> &middot; 31 July 2026 &middot; 8 min read</span>
+    </div>
+    <div class="tagrow"><a class="tag" href="index.html#campaign-structure">Campaign structure</a></div>
+  </div>
+</section>
+
+<article class="band band--tight" style="padding-top:8px">
+  <div class="shell-narrow article">
+    <nav class="toc" aria-label="On this page"><b>On this page</b><a href="#decay">Why match rates decay</a><a href="#bad">What a bad match report looks like</a><a href="#fix">Fixing the four common failures</a><a href="#routine">A monthly routine</a></nav>
+    
+<p>Company matching is the least glamorous part of account-based advertising and the one most likely to be quietly destroying a programme. It is also invisible: nothing in day-to-day campaign reporting distinguishes "this account is not engaging" from "this account is not being targeted at all".</p>
+
+<h2 id="decay">Why match rates decay</h2>
+<p>A list uploaded once and never revisited degrades for entirely mundane reasons.</p>
+<ul>
+<li><strong>Companies get acquired.</strong> The acquired entity's page is merged or archived, and everything you were targeting through it stops resolving.</li>
+<li><strong>Companies rename or rebrand.</strong> Common in the two years after a funding round, and a rename usually comes with a new domain.</li>
+<li><strong>Your list was built from trading names.</strong> Sales calls it "Ravensbourne". The registered entity is "Ravensbourne Logistics Holdings Ltd" and the page is under a third variant.</li>
+<li><strong>Subsidiaries and parents get confused.</strong> You target the parent; the buying committee sits in a subsidiary with its own page, or vice versa.</li>
+<li><strong>Regional entities are separate pages.</strong> The DACH arm of a US company is often a distinct entity, and targeting the parent will not reach the people who would actually buy from you.</li>
+</ul>
+<p>None of these produce an error. They produce a slightly smaller audience, which produces slightly cheaper delivery to the accounts that did match, which produces a report that looks fine.</p>
+
+<h2 id="bad">What a bad match report looks like</h2>
+<p>Rough guidance for a list of mid-market and enterprise companies:</p>
+<table class="datatable">
+<thead><tr><th>Match rate</th><th>Interpretation</th></tr></thead>
+<tbody>
+<tr><td class="num">90%+</td><td>Healthy. Usually means the list was built from domains.</td></tr>
+<tr><td class="num">75–90%</td><td>Normal for a name-based list. The gap is worth working through.</td></tr>
+<tr><td class="num">60–75%</td><td>Something systematic is wrong — often a region or a segment failing as a group.</td></tr>
+<tr><td class="num">Below 60%</td><td>Do not launch. You are about to spend a quarter reaching half your strategy.</td></tr>
+</tbody>
+</table>
+<p>Small companies and certain regions match worse for legitimate reasons, so read the rate by segment rather than in aggregate. A 78% overall rate that is 94% in North America and 51% in DACH is not a 78% problem; it is a DACH problem, and averaging it away is how it survives.</p>
+
+<h2 id="fix">Fixing the four common failures</h2>
+<h3>1. Use domains, always</h3>
+<p>Domain matching outperforms name matching by a wide margin. If your CRM holds website URLs, export those. Strip protocols and <span class="mono">www</span>, keep the registrable domain, and drop anything that resolves to a generic email provider &mdash; a row whose "domain" is a free webmail host is a data-entry error, not a company.</p>
+<h3>2. Decide the parent/subsidiary rule once, and write it down</h3>
+<p>There is no universally right answer. If you sell centrally, target the parent and roll subsidiary engagement up to it. If you sell into regional entities, target them separately and report them separately. What breaks programmes is doing both inconsistently, so that an account appears twice, gets double the delivery, and shows up in reporting as two half-covered accounts.</p>
+<h3>3. Add known aliases</h3>
+<p>Keep an alias column. When a match fails, the fix is usually one of: the registered name, the pre-rebrand name, or the parent. Recording the alias means the next upload does not fail the same way.</p>
+<h3>4. Re-upload on a schedule, not on a crisis</h3>
+<p>Monthly is enough for most programmes. Quarterly is acceptable for very stable lists. "When something looks wrong" is not a schedule, because the failure mode is specifically that nothing looks wrong.</p>
+
+<div class="callout"><b>The subtle one:</b> when a company you were successfully targeting gets acquired, your delivery to it usually does not stop. It drifts to the acquirer's page, which may be a much larger organisation. Your impressions quietly relocate to a company that is not on your list, at a scale that can absorb a meaningful share of a small budget. This is invisible unless you compare delivery against the list rather than reading the campaign totals.</p></div>
+
+<h2 id="routine">A monthly routine</h2>
+<p>Twenty minutes, once a month:</p>
+<ol>
+<li>Export the current match report. Record the rate overall and by region and tier.</li>
+<li>Compare against last month. Any drop over about three points is a signal, not noise.</li>
+<li>Work the unmatched list. Most rows resolve with a registered name or a domain, and the fixes accumulate &mdash; the list gets more robust each month rather than decaying.</li>
+<li>Check for accounts that have gone to zero delivery while the campaign is still running. That pattern almost always means an acquisition or a page merge.</li>
+<li>Re-upload and note the new baseline.</li>
+</ol>
+<p>It is dull. It is also the highest-return twenty minutes in the entire programme, because everything downstream &mdash; coverage, scoring, attribution &mdash; is computed against a list that has to be right first.</p>
+
+    <hr>
+    <div class="byline">
+      <span class="avatar" aria-hidden="true">SO</span>
+      <span><b style="color:var(--ink)">Sam Okonjo</b><br><span class="small">Works on the scoring and attribution models. Previously built marketing data infrastructure at two B2B SaaS companies.</span></span>
+    </div>
+  </div>
+</article>
+
+<section class="band band--fog">
+  <div class="shell stack stack-lg">
+    <div class="stack stack-sm"><span class="eyebrow">Keep reading</span><h2 style="font-size:26px">Related pieces</h2></div>
+    <div class="grid g3"><article class="postcard">
+  <span class="tag">Campaign structure</span>
+  <h3><a href="../blog/full-funnel-linkedin-abm.html">A full-funnel LinkedIn structure for ABM is easy to draw and hard to run</a></h3>
+  <p>The three-stage diagram is on every agency slide. What it leaves out is that each stage needs its own budget floor, its own audience logic and its own success metric — or the auction collapses it into one.</p>
+  <div class="postmeta"><span>Priya Raghunathan</span><span>·</span><span>21 August 2026</span><span>·</span><span>11 min</span></div>
+</article><article class="postcard">
+  <span class="tag">Campaign structure</span>
+  <h3><a href="../blog/conversion-campaigns-for-abm.html">When conversion objectives quietly break an ABM campaign</a></h3>
+  <p>Optimising for conversions needs volume the algorithm can learn from. On a 400-account list, that volume usually does not exist — and the campaign fails in a way that looks like a creative problem.</p>
+  <div class="postmeta"><span>Priya Raghunathan</span><span>·</span><span>17 July 2026</span><span>·</span><span>7 min</span></div>
+</article><article class="postcard">
+  <span class="tag">Measurement</span>
+  <h3><a href="../blog/coverage-before-creative.html">Most ABM programmes fail on coverage, not on creative</a></h3>
+  <p>Teams spend quarters iterating on ad copy for a list they are only reaching a third of. Coverage is the cheapest problem in ABM to fix and the one almost nobody measures.</p>
+  <div class="postmeta"><span>Elena Marsh</span><span>·</span><span>2 September 2026</span><span>·</span><span>9 min</span></div>
+</article></div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="shell">
+    <div class="cta">
+      <div>
+        <h2>Find out which accounts your LinkedIn ads actually reached.</h2>
+        <p>Connect an ad account, pick a target list, and Kairo backfills 90 days of company-level engagement before your trial is an hour old.</p>
+      </div>
+      <div class="btnrow">
+        <a class="btn btn--primary" href="../demo.html">Start a 30-day trial</a>
+        <a class="btn btn--ghost" href="../demo.html">Book a walkthrough</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="foot">
+  <div class="shell">
+    <div class="foot__grid">
+      <div>
+        <a class="brand" href="../index.html" style="color:#fff" aria-label="Kairo home">
+          <svg class="mark" width="26" height="26" viewBox="0 0 48 48" aria-hidden="true">
+<g fill="none" stroke="#7A92FF" stroke-width="4.4" stroke-linecap="round">
+<path d="M10 19 A9 9 0 0 1 19 10" opacity=".3"/>
+<path d="M10 28 A18 18 0 0 1 28 10" opacity=".6"/>
+<path d="M10 37 A27 27 0 0 1 37 10"/></g>
+<circle cx="37" cy="37" r="5.5" fill="#FF6B4A"/></svg><span class="brand__word">Kairo</span>
+        </a>
+        <p style="margin-top:14px; max-width:30ch; line-height:1.6">LinkedIn-first ABM, measured at the account level. Know which named accounts your ads reached, and which ones are ready for a call.</p>
+      </div>
+      <div>
+      <h4>Product</h4>
+      <ul>
+        <li><a href="../product/index.html">Overview</a></li>
+        <li><a href="../product/kai.html">Kai, the AI analyst</a></li>
+        <li><a href="../product/engagement.html">Company engagement</a></li>
+        <li><a href="../product/scoring.html">Account scoring &amp; intent</a></li>
+        <li><a href="../product/attribution.html">Revenue attribution</a></li>
+        <li><a href="../product/integrations.html">CRM sync, API &amp; MCP</a></li>
+      </ul>
+    </div><div>
+      <h4>Use cases</h4>
+      <ul>
+        <li><a href="../product/attribution.html">ABM campaign reporting</a></li>
+        <li><a href="../product/scoring.html">Prioritising accounts for sales</a></li>
+        <li><a href="../blog/full-funnel-linkedin-abm.html">Full-funnel LinkedIn programmes</a></li>
+        <li><a href="../pricing.html">Agencies &amp; consultancies</a></li>
+        <li><a href="../tools/abm-budget-calculator.html">ABM budget calculator</a></li>
+      </ul>
+    </div><div>
+      <h4>Proof</h4>
+      <ul>
+        <li><a href="../customers/index.html">All case studies</a></li>
+        <li><a href="../customers/northfield-systems.html">Northfield Systems</a></li>
+        <li><a href="../customers/tessellate.html">Tessellate</a></li>
+        <li><a href="../compare.html">How Kairo compares</a></li>
+        <li><a href="../demo.html">Book a walkthrough</a></li>
+      </ul>
+    </div><div>
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="../blog/index.html">Blog</a></li>
+        <li><a href="../blog/measuring-influenced-pipeline.html">LinkedIn ABM measurement</a></li>
+        <li><a href="../blog/account-scoring-sales-trusts.html">Account scoring guide</a></li>
+        <li><a href="../tools/abm-budget-calculator.html">Budget calculator</a></li>
+        <li><a href="../about.html">About Kairo</a></li>
+        <li><a href="../about.html#contact">Contact</a></li>
+      </ul>
+    </div>
+    </div>
+    <div class="foot__base">
+      <span>&copy; 2026 Abron Technologies Private Limited</span>
+      <span><a href="../legal/terms.html">Terms of use</a> &nbsp;·&nbsp; <a href="../legal/privacy.html">Privacy policy</a></span>
+      <span class="sp"><a href="mailto:hello@kairoabm.com">hello@kairoabm.com</a></span>
+    </div>
+    <p class="foot__addr">
+      Kairo is a product of Abron Technologies Private Limited &middot; 2nd Floor, Samson &amp; Sons Building, TKD Road, Muttada, Thiruvananthapuram, Kerala 695025, India
+    </p>
+  </div>
+</footer>
+</body>
+</html>

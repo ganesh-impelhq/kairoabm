@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>When conversion objectives quietly break an ABM campaign — Kairo</title>
+<meta name="description" content="Optimising for conversions needs volume the algorithm can learn from. On a 400-account list, that volume usually does not exist — and the campaign fails in a way that looks like a creative problem.">
+<meta property="og:title" content="When conversion objectives quietly break an ABM campaign — Kairo">
+<meta property="og:description" content="Optimising for conversions needs volume the algorithm can learn from. On a 400-account list, that volume usually does not exist — and the campaign fails in a way that looks like a creative problem.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kairo">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="masthead">
+  <div class="masthead__in">
+    <a class="brand" href="../index.html" aria-label="Kairo home">
+      <svg class="mark" width="27" height="27" viewBox="0 0 48 48" aria-hidden="true">
+<g fill="none" stroke="#2B4BF2" stroke-width="4.4" stroke-linecap="round">
+<path d="M10 19 A9 9 0 0 1 19 10" opacity=".3"/>
+<path d="M10 28 A18 18 0 0 1 28 10" opacity=".6"/>
+<path d="M10 37 A27 27 0 0 1 37 10"/></g>
+<circle cx="37" cy="37" r="5.5" fill="#FF6B4A"/></svg><span class="brand__word">Kairo</span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="../product/index.html">Product</a>
+      <a href="../product/kai.html">Kai</a>
+      <a href="../pricing.html">Pricing</a>
+      <a href="../customers/index.html">Customers</a>
+      <a href="../compare.html">Compare</a>
+      <a href="../blog/index.html" aria-current="page">Blog</a>
+      <span class="nav__sep" aria-hidden="true"></span>
+      <a href="../demo.html">Sign in</a>
+      <a class="btn btn--primary btn--sm" href="../demo.html">Start free</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+
+<section class="band band--tight">
+  <div class="shell-narrow stack stack-md" style="padding-top:38px">
+    <div class="crumbs"><a href="index.html">Blog</a> <span>/</span> <span>Campaign structure</span></div>
+    <h1 style="font-size:clamp(30px,4.4vw,44px)">When conversion objectives quietly break an ABM campaign</h1>
+    <p class="lede">Optimising for conversions needs volume the algorithm can learn from. On a 400-account list, that volume usually does not exist — and the campaign fails in a way that looks like a creative problem.</p>
+    <div class="byline">
+      <span class="avatar" aria-hidden="true">PR</span>
+      <span><b style="color:var(--ink)">Priya Raghunathan</b> &middot; 17 July 2026 &middot; 7 min read</span>
+    </div>
+    <div class="tagrow"><a class="tag" href="index.html#campaign-structure">Campaign structure</a></div>
+  </div>
+</section>
+
+<article class="band band--tight" style="padding-top:8px">
+  <div class="shell-narrow article">
+    <nav class="toc" aria-label="On this page"><b>On this page</b><a href="#volume">The volume requirement</a><a href="#starved">What starvation looks like</a><a href="#better">Three better objectives</a><a href="#right">When conversion is right</a></nav>
+    
+<p>The instinct is understandable. You want meetings, the platform offers an objective called conversions, so you select it. Then delivery becomes erratic, costs climb, and the campaign never seems to settle. The usual response is to blame the creative, and the usual result is three weeks of iteration on a problem that is structural.</p>
+
+<h2 id="volume">The volume requirement</h2>
+<p>Conversion optimisation works by learning which people in your audience resemble the ones who converted. That requires a supply of conversion events to learn from &mdash; enough of them, recently enough, to distinguish signal from chance.</p>
+<p>The commonly cited floor across major ad platforms is somewhere around fifty conversions per campaign per week for stable optimisation. Now do the arithmetic on a typical named-account programme: 400 accounts, six committee members each, a matched audience of a few thousand people, a realistic monthly conversion rate on a considered B2B offer. You are generating a handful of events a week, not fifty.</p>
+<p>The algorithm is not broken in that situation. It simply has nothing to learn from, so it falls back on weak proxies, and delivery becomes unstable in ways that look like bad luck.</p>
+
+<h2 id="starved">What starvation looks like</h2>
+<p>Four symptoms, and they are consistent enough to be diagnostic:</p>
+<ul>
+<li><strong>Delivery lurches.</strong> Two thousand impressions on Tuesday, four hundred on Wednesday, no change in budget or bid.</li>
+<li><strong>Cost per result swings wildly week to week</strong>, with no corresponding change in the auction or your creative.</li>
+<li><strong>Coverage collapses toward a small subset.</strong> The algorithm finds a handful of people who resemble a past converter and serves them repeatedly, which is precisely the opposite of what an account-based programme needs.</li>
+<li><strong>The campaign never exits learning</strong>, or exits and re-enters after every edit.</li>
+</ul>
+<p>The last one is worth watching for specifically, because the natural response to poor performance &mdash; editing the campaign &mdash; resets learning, which makes performance worse, which prompts another edit.</p>
+
+<h2 id="better">Three better objectives for named-account work</h2>
+<h3>Reach, with a frequency cap</h3>
+<p>For the coverage stage of a programme this is almost always correct. You are explicitly telling the platform to spread delivery rather than concentrate it, which is exactly the job. Pair it with a cap, or the "cheapest available impressions" behaviour reasserts itself.</p>
+<p>Measure it on accounts reached and cost per account reached. Do not measure it on CTR.</p>
+<h3>Engagement or video views</h3>
+<p>For the depth stage, where you want people to actually consume something. These objectives optimise toward events that occur in far greater volume than conversions, so the algorithm has enough to learn from while still selecting for interest rather than mere presence.</p>
+<h3>Traffic, with the landing page doing the qualifying</h3>
+<p>Underrated for bottom-funnel ABM. Clicks are plentiful enough to optimise on, and the qualification happens on your page rather than in the ad platform's model. It gives up some efficiency in exchange for stability, which on a small audience is a good trade.</p>
+<div class="callout"><b>The general principle:</b> optimise for the most valuable event that occurs often enough to learn from. On a small named-account audience, that is almost never the purchase-adjacent event you actually want.</div>
+
+<h2 id="right">When conversion optimisation is the right call</h2>
+<p>Three situations where it works:</p>
+<p><strong>Your audience is large enough.</strong> If your list is several thousand accounts and the matched audience runs into six figures of people, conversion volume can clear the threshold. This is programmatic ABM territory, and different rules apply.</p>
+<p><strong>You define a shallower conversion.</strong> Optimising for a document download or a page view rather than a demo request can generate enough volume. You are then optimising for something correlated with what you want rather than the thing itself, which is a real trade-off &mdash; but a working shallow proxy beats a starved deep one.</p>
+<p><strong>You are running a bottom-funnel campaign against an already-warm audience.</strong> If the audience is accounts that have crossed a scoring threshold, the base rate is high enough that conversion volume can be viable even on a small list. This is the one case where the classic setup fits an ABM programme cleanly.</p>
+<p>Outside those three, choosing conversions on a named-account campaign is choosing an objective the campaign cannot feed, and the resulting instability will be misdiagnosed as a creative problem for as long as you let it.</p>
+
+    <hr>
+    <div class="byline">
+      <span class="avatar" aria-hidden="true">PR</span>
+      <span><b style="color:var(--ink)">Priya Raghunathan</b><br><span class="small">Writes about programme structure and measurement. Ran named-account demand generation for eight years before joining Kairo.</span></span>
+    </div>
+  </div>
+</article>
+
+<section class="band band--fog">
+  <div class="shell stack stack-lg">
+    <div class="stack stack-sm"><span class="eyebrow">Keep reading</span><h2 style="font-size:26px">Related pieces</h2></div>
+    <div class="grid g3"><article class="postcard">
+  <span class="tag">Campaign structure</span>
+  <h3><a href="../blog/full-funnel-linkedin-abm.html">A full-funnel LinkedIn structure for ABM is easy to draw and hard to run</a></h3>
+  <p>The three-stage diagram is on every agency slide. What it leaves out is that each stage needs its own budget floor, its own audience logic and its own success metric — or the auction collapses it into one.</p>
+  <div class="postmeta"><span>Priya Raghunathan</span><span>·</span><span>21 August 2026</span><span>·</span><span>11 min</span></div>
+</article><article class="postcard">
+  <span class="tag">Campaign structure</span>
+  <h3><a href="../blog/matched-audience-list-hygiene.html">The list hygiene problem nobody talks about</a></h3>
+  <p>Match rates decay silently. A target list uploaded eight months ago is not the list your ads are running against today, and nothing in the reporting will tell you.</p>
+  <div class="postmeta"><span>Sam Okonjo</span><span>·</span><span>31 July 2026</span><span>·</span><span>8 min</span></div>
+</article><article class="postcard">
+  <span class="tag">Measurement</span>
+  <h3><a href="../blog/coverage-before-creative.html">Most ABM programmes fail on coverage, not on creative</a></h3>
+  <p>Teams spend quarters iterating on ad copy for a list they are only reaching a third of. Coverage is the cheapest problem in ABM to fix and the one almost nobody measures.</p>
+  <div class="postmeta"><span>Elena Marsh</span><span>·</span><span>2 September 2026</span><span>·</span><span>9 min</span></div>
+</article></div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="shell">
+    <div class="cta">
+      <div>
+        <h2>Find out which accounts your LinkedIn ads actually reached.</h2>
+        <p>Connect an ad account, pick a target list, and Kairo backfills 90 days of company-level engagement before your trial is an hour old.</p>
+      </div>
+      <div class="btnrow">
+        <a class="btn btn--primary" href="../demo.html">Start a 30-day trial</a>
+        <a class="btn btn--ghost" href="../demo.html">Book a walkthrough</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="foot">
+  <div class="shell">
+    <div class="foot__grid">
+      <div>
+        <a class="brand" href="../index.html" style="color:#fff" aria-label="Kairo home">
+          <svg class="mark" width="26" height="26" viewBox="0 0 48 48" aria-hidden="true">
+<g fill="none" stroke="#7A92FF" stroke-width="4.4" stroke-linecap="round">
+<path d="M10 19 A9 9 0 0 1 19 10" opacity=".3"/>
+<path d="M10 28 A18 18 0 0 1 28 10" opacity=".6"/>
+<path d="M10 37 A27 27 0 0 1 37 10"/></g>
+<circle cx="37" cy="37" r="5.5" fill="#FF6B4A"/></svg><span class="brand__word">Kairo</span>
+        </a>
+        <p style="margin-top:14px; max-width:30ch; line-height:1.6">LinkedIn-first ABM, measured at the account level. Know which named accounts your ads reached, and which ones are ready for a call.</p>
+      </div>
+      <div>
+      <h4>Product</h4>
+      <ul>
+        <li><a href="../product/index.html">Overview</a></li>
+        <li><a href="../product/kai.html">Kai, the AI analyst</a></li>
+        <li><a href="../product/engagement.html">Company engagement</a></li>
+        <li><a href="../product/scoring.html">Account scoring &amp; intent</a></li>
+        <li><a href="../product/attribution.html">Revenue attribution</a></li>
+        <li><a href="../product/integrations.html">CRM sync, API &amp; MCP</a></li>
+      </ul>
+    </div><div>
+      <h4>Use cases</h4>
+      <ul>
+        <li><a href="../product/attribution.html">ABM campaign reporting</a></li>
+        <li><a href="../product/scoring.html">Prioritising accounts for sales</a></li>
+        <li><a href="../blog/full-funnel-linkedin-abm.html">Full-funnel LinkedIn programmes</a></li>
+        <li><a href="../pricing.html">Agencies &amp; consultancies</a></li>
+        <li><a href="../tools/abm-budget-calculator.html">ABM budget calculator</a></li>
+      </ul>
+    </div><div>
+      <h4>Proof</h4>
+      <ul>
+        <li><a href="../customers/index.html">All case studies</a></li>
+        <li><a href="../customers/northfield-systems.html">Northfield Systems</a></li>
+        <li><a href="../customers/tessellate.html">Tessellate</a></li>
+        <li><a href="../compare.html">How Kairo compares</a></li>
+        <li><a href="../demo.html">Book a walkthrough</a></li>
+      </ul>
+    </div><div>
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="../blog/index.html">Blog</a></li>
+        <li><a href="../blog/measuring-influenced-pipeline.html">LinkedIn ABM measurement</a></li>
+        <li><a href="../blog/account-scoring-sales-trusts.html">Account scoring guide</a></li>
+        <li><a href="../tools/abm-budget-calculator.html">Budget calculator</a></li>
+        <li><a href="../about.html">About Kairo</a></li>
+        <li><a href="../about.html#contact">Contact</a></li>
+      </ul>
+    </div>
+    </div>
+    <div class="foot__base">
+      <span>&copy; 2026 Abron Technologies Private Limited</span>
+      <span><a href="../legal/terms.html">Terms of use</a> &nbsp;·&nbsp; <a href="../legal/privacy.html">Privacy policy</a></span>
+      <span class="sp"><a href="mailto:hello@kairoabm.com">hello@kairoabm.com</a></span>
+    </div>
+    <p class="foot__addr">
+      Kairo is a product of Abron Technologies Private Limited &middot; 2nd Floor, Samson &amp; Sons Building, TKD Road, Muttada, Thiruvananthapuram, Kerala 695025, India
+    </p>
+  </div>
+</footer>
+</body>
+</html>

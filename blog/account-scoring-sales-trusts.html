@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Building an account score your sales team will actually use — Kairo</title>
+<meta name="description" content="Most scoring models fail for a social reason rather than a statistical one: nobody can explain what an 87 is made of, so the first time it is wrong, the reps stop looking.">
+<meta property="og:title" content="Building an account score your sales team will actually use — Kairo">
+<meta property="og:description" content="Most scoring models fail for a social reason rather than a statistical one: nobody can explain what an 87 is made of, so the first time it is wrong, the reps stop looking.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kairo">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="masthead">
+  <div class="masthead__in">
+    <a class="brand" href="../index.html" aria-label="Kairo home">
+      <svg class="mark" width="27" height="27" viewBox="0 0 48 48" aria-hidden="true">
+<g fill="none" stroke="#2B4BF2" stroke-width="4.4" stroke-linecap="round">
+<path d="M10 19 A9 9 0 0 1 19 10" opacity=".3"/>
+<path d="M10 28 A18 18 0 0 1 28 10" opacity=".6"/>
+<path d="M10 37 A27 27 0 0 1 37 10"/></g>
+<circle cx="37" cy="37" r="5.5" fill="#FF6B4A"/></svg><span class="brand__word">Kairo</span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="../product/index.html">Product</a>
+      <a href="../product/kai.html">Kai</a>
+      <a href="../pricing.html">Pricing</a>
+      <a href="../customers/index.html">Customers</a>
+      <a href="../compare.html">Compare</a>
+      <a href="../blog/index.html" aria-current="page">Blog</a>
+      <span class="nav__sep" aria-hidden="true"></span>
+      <a href="../demo.html">Sign in</a>
+      <a class="btn btn--primary btn--sm" href="../demo.html">Start free</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+
+<section class="band band--tight">
+  <div class="shell-narrow stack stack-md" style="padding-top:38px">
+    <div class="crumbs"><a href="index.html">Blog</a> <span>/</span> <span>Scoring & intent</span></div>
+    <h1 style="font-size:clamp(30px,4.4vw,44px)">Building an account score your sales team will actually use</h1>
+    <p class="lede">Most scoring models fail for a social reason rather than a statistical one: nobody can explain what an 87 is made of, so the first time it is wrong, the reps stop looking.</p>
+    <div class="byline">
+      <span class="avatar" aria-hidden="true">SO</span>
+      <span><b style="color:var(--ink)">Sam Okonjo</b> &middot; 14 August 2026 &middot; 9 min read</span>
+    </div>
+    <div class="tagrow"><a class="tag" href="index.html#scoring-intent">Scoring & intent</a></div>
+  </div>
+</section>
+
+<article class="band band--tight" style="padding-top:8px">
+  <div class="shell-narrow article">
+    <nav class="toc" aria-label="On this page"><b>On this page</b><a href="#ignored">Why scores get ignored</a><a href="#signals">Four signals worth weighting</a><a href="#not">What not to include</a><a href="#calibrate">Calibration</a><a href="#handover">Handing it to sales</a></nav>
+    
+<p>Account scoring has a bad reputation in sales teams, and the reputation is earned. The typical experience is a number appearing on a record, nobody being able to say what produced it, one high-scoring account turning out to be a student doing research, and the field quietly reverting to their own judgement forever after.</p>
+<p>The failure is almost never the model's arithmetic. It is that the model was delivered as an oracle rather than as an argument.</p>
+
+<h2 id="ignored">Why scores get ignored</h2>
+<p>Three specific reasons, in order of how often I see them.</p>
+<p><strong>The score cannot be expanded.</strong> If a rep cannot click an 87 and see the six things that produced it, the score is asking for trust it has not earned. Every score in a system reps use has to decompose into human-readable events with dates.</p>
+<p><strong>It was calibrated on the wrong outcome.</strong> Many models are trained to predict conversion to MQL, because that is the data marketing has. Sales does not care about MQLs. A model that predicts "will accept a meeting" or "will open an opportunity" is a different model, and it is the one worth building.</p>
+<p><strong>It has no memory.</strong> A rep calls an account showing 91 on Tuesday. By the time the call notes are written the score is 74 because a decay function ran overnight, and the rep now looks like they invented the reason for the call. Score history is not a nice-to-have.</p>
+
+<h2 id="signals">Four signals worth weighting</h2>
+<p>For a paid-led ABM programme, the signals that carry predictive weight are consistent across most B2B categories I have looked at.</p>
+<h3>Committee breadth — the strongest single signal</h3>
+<p>Distinct job functions engaged within the window. The move from one function to two is the most informative transition in the whole model, more so than the move from two to three. One person engaging is curiosity; two people in different functions is an internal conversation, and internal conversations are what precede purchases.</p>
+<p>Weight it around 30% and count functions, not people. Three engineers is one function.</p>
+<h3>Depth — how much they took</h3>
+<p>Touches per engaged contact, weighted by asset commitment. A document ad opened and read is worth several video views; a fifteen-second view of a thirty-second video is worth very little. Around 20%.</p>
+<h3>Seniority — with a caveat</h3>
+<p>Director-and-above involvement, roughly 20%. The caveat: do not weight it so heavily that an engaged analyst team scores below a single VP who watched three seconds of a video. In most complex purchases the analyst does the evaluation and the VP arrives late to approve it.</p>
+<h3>Recency — a curve, not a cliff</h3>
+<p>Around 15%, decayed smoothly. A hard 30-day cliff creates the Tuesday-to-Wednesday collapse that destroys rep trust. A gradual half-life &mdash; something in the region of three to five weeks for most B2B cycles &mdash; behaves far better.</p>
+<p>The remaining weight goes to bottom-funnel creative engagement and, if you have a site tag, visits to pricing and documentation pages. Both are strong signals with low volume, which is exactly what a small weight is for.</p>
+
+<h2 id="not">What not to include</h2>
+<p><strong>Firmographic fit.</strong> This is the big one. Company size, industry and technology stack tell you whether an account <em>should</em> buy. Engagement tells you whether it is <em>moving</em>. Blend them into one number and you produce a score where a perfect-fit account that has never engaged outranks an imperfect-fit account whose whole committee is reading your documentation. Keep two axes: fit and engagement. Sales prioritises on the combination, and can see which is which.</p>
+<p><strong>Raw impression counts.</strong> Impressions are something you bought, not something they did. An account you served forty times because it was cheap to reach is not more interested than one you served eight times. Score engagement; report impressions separately.</p>
+<p><strong>Anything you cannot show the rep.</strong> If a signal cannot be rendered as a sentence with a date on it, it does not belong in a score that a human is expected to act on.</p>
+
+<h2 id="calibrate">Calibration</h2>
+<p>You need three months of history and a defined positive outcome before the model means anything. Pick the outcome that sales recognises &mdash; first meeting accepted, or opportunity created &mdash; not the one marketing has most data on.</p>
+<p>Then do the uncomfortable check: take accounts that produced the outcome and look at what their score was two weeks beforehand. If the distribution is flat, your model is not predictive and no amount of weight-tuning will rescue it; you probably do not have enough engagement volume for scoring to work yet, and should say so rather than shipping a number.</p>
+<div class="callout"><b>Set thresholds on volume, not on aesthetics.</b> The number that matters is not what score means "in market" &mdash; it is how many accounts cross that threshold per week. Set it so the flow matches what your team can actually follow up. A threshold that produces sixty accounts a week for two SDRs produces a backlog and a story about how the scores are useless.</div>
+
+<h2 id="handover">Handing it to sales</h2>
+<p>Four things to do at handover, all of which are about credibility rather than technology:</p>
+<ul>
+<li><strong>Show the model before the scores.</strong> Walk the team through the four signals and the weights. Let them argue. Change one thing they push back on, if it is defensible &mdash; joint ownership is worth more than optimal weights.</li>
+<li><strong>Send the expansion, not the number.</strong> The CRM field should be accompanied by the three top contributing events. "Score 87 — Head of Ops, VP Eng and a finance director all engaged in the last eleven days" is actionable. "87" is not.</li>
+<li><strong>Publish the threshold flow rate.</strong> Tell the team how many accounts to expect per week. Surprises destroy trust faster than inaccuracy.</li>
+<li><strong>Review the misses monthly.</strong> Take the five highest-scoring accounts that went nowhere and the five opportunities that opened with low scores. Both lists teach you something, and running the review in front of sales is what turns the model from marketing's tool into a shared one.</li>
+</ul>
+
+    <hr>
+    <div class="byline">
+      <span class="avatar" aria-hidden="true">SO</span>
+      <span><b style="color:var(--ink)">Sam Okonjo</b><br><span class="small">Works on the scoring and attribution models. Previously built marketing data infrastructure at two B2B SaaS companies.</span></span>
+    </div>
+  </div>
+</article>
+
+<section class="band band--fog">
+  <div class="shell stack stack-lg">
+    <div class="stack stack-sm"><span class="eyebrow">Keep reading</span><h2 style="font-size:26px">Related pieces</h2></div>
+    <div class="grid g3"><article class="postcard">
+  <span class="tag">Scoring & intent</span>
+  <h3><a href="../blog/scaling-target-account-lists.html">Scaling from 200 accounts to 2,000 without losing the thing that worked</a></h3>
+  <p>The pilot worked because it was small enough to run carefully. Most scale-ups fail by keeping the budget proportional and the personalisation constant, which quietly turns ABM back into demand generation.</p>
+  <div class="postmeta"><span>Sam Okonjo</span><span>·</span><span>3 July 2026</span><span>·</span><span>8 min</span></div>
+</article><article class="postcard">
+  <span class="tag">Scoring & intent</span>
+  <h3><a href="../blog/what-linkedin-engagement-can-tell-you.html">What ad engagement can honestly tell you about intent</a></h3>
+  <p>Engagement with your own campaigns is first-party behavioural evidence and it is genuinely predictive. It is also not the same thing as intent data, and conflating them is how teams end up distrusting both.</p>
+  <div class="postmeta"><span>Elena Marsh</span><span>·</span><span>26 June 2026</span><span>·</span><span>7 min</span></div>
+</article><article class="postcard">
+  <span class="tag">Measurement</span>
+  <h3><a href="../blog/coverage-before-creative.html">Most ABM programmes fail on coverage, not on creative</a></h3>
+  <p>Teams spend quarters iterating on ad copy for a list they are only reaching a third of. Coverage is the cheapest problem in ABM to fix and the one almost nobody measures.</p>
+  <div class="postmeta"><span>Elena Marsh</span><span>·</span><span>2 September 2026</span><span>·</span><span>9 min</span></div>
+</article></div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="shell">
+    <div class="cta">
+      <div>
+        <h2>Find out which accounts your LinkedIn ads actually reached.</h2>
+        <p>Connect an ad account, pick a target list, and Kairo backfills 90 days of company-level engagement before your trial is an hour old.</p>
+      </div>
+      <div class="btnrow">
+        <a class="btn btn--primary" href="../demo.html">Start a 30-day trial</a>
+        <a class="btn btn--ghost" href="../demo.html">Book a walkthrough</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="foot">
+  <div class="shell">
+    <div class="foot__grid">
+      <div>
+        <a class="brand" href="../index.html" style="color:#fff" aria-label="Kairo home">
+          <svg class="mark" width="26" height="26" viewBox="0 0 48 48" aria-hidden="true">
+<g fill="none" stroke="#7A92FF" stroke-width="4.4" stroke-linecap="round">
+<path d="M10 19 A9 9 0 0 1 19 10" opacity=".3"/>
+<path d="M10 28 A18 18 0 0 1 28 10" opacity=".6"/>
+<path d="M10 37 A27 27 0 0 1 37 10"/></g>
+<circle cx="37" cy="37" r="5.5" fill="#FF6B4A"/></svg><span class="brand__word">Kairo</span>
+        </a>
+        <p style="margin-top:14px; max-width:30ch; line-height:1.6">LinkedIn-first ABM, measured at the account level. Know which named accounts your ads reached, and which ones are ready for a call.</p>
+      </div>
+      <div>
+      <h4>Product</h4>
+      <ul>
+        <li><a href="../product/index.html">Overview</a></li>
+        <li><a href="../product/kai.html">Kai, the AI analyst</a></li>
+        <li><a href="../product/engagement.html">Company engagement</a></li>
+        <li><a href="../product/scoring.html">Account scoring &amp; intent</a></li>
+        <li><a href="../product/attribution.html">Revenue attribution</a></li>
+        <li><a href="../product/integrations.html">CRM sync, API &amp; MCP</a></li>
+      </ul>
+    </div><div>
+      <h4>Use cases</h4>
+      <ul>
+        <li><a href="../product/attribution.html">ABM campaign reporting</a></li>
+        <li><a href="../product/scoring.html">Prioritising accounts for sales</a></li>
+        <li><a href="../blog/full-funnel-linkedin-abm.html">Full-funnel LinkedIn programmes</a></li>
+        <li><a href="../pricing.html">Agencies &amp; consultancies</a></li>
+        <li><a href="../tools/abm-budget-calculator.html">ABM budget calculator</a></li>
+      </ul>
+    </div><div>
+      <h4>Proof</h4>
+      <ul>
+        <li><a href="../customers/index.html">All case studies</a></li>
+        <li><a href="../customers/northfield-systems.html">Northfield Systems</a></li>
+        <li><a href="../customers/tessellate.html">Tessellate</a></li>
+        <li><a href="../compare.html">How Kairo compares</a></li>
+        <li><a href="../demo.html">Book a walkthrough</a></li>
+      </ul>
+    </div><div>
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="../blog/index.html">Blog</a></li>
+        <li><a href="../blog/measuring-influenced-pipeline.html">LinkedIn ABM measurement</a></li>
+        <li><a href="../blog/account-scoring-sales-trusts.html">Account scoring guide</a></li>
+        <li><a href="../tools/abm-budget-calculator.html">Budget calculator</a></li>
+        <li><a href="../about.html">About Kairo</a></li>
+        <li><a href="../about.html#contact">Contact</a></li>
+      </ul>
+    </div>
+    </div>
+    <div class="foot__base">
+      <span>&copy; 2026 Abron Technologies Private Limited</span>
+      <span><a href="../legal/terms.html">Terms of use</a> &nbsp;·&nbsp; <a href="../legal/privacy.html">Privacy policy</a></span>
+      <span class="sp"><a href="mailto:hello@kairoabm.com">hello@kairoabm.com</a></span>
+    </div>
+    <p class="foot__addr">
+      Kairo is a product of Abron Technologies Private Limited &middot; 2nd Floor, Samson &amp; Sons Building, TKD Road, Muttada, Thiruvananthapuram, Kerala 695025, India
+    </p>
+  </div>
+</footer>
+</body>
+</html>
